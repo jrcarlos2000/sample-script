@@ -3,7 +3,7 @@ const merkleProof = require("./merkleProof.json");
 
 async function main() {
     const exchangeAddr = "0xdac304791b7f53593c701980aa52087ed7ec6649"; //check for curr degate exchange address
-    const USDCAddr = "0xeb8f08a975Ab53E34D8a0330E0D34de942C95926"; // change to the token addr in the network you are in
+    const USDCAddr = "0x953873a4E0B57179D88A9275Cfb5243D3e631f1B"; // change to the token addr in the network you are in
     const cDegate = await hre.ethers.getContractAt(DEGATE_ABI,exchangeAddr); //
     const cUSDC = await hre.ethers.getContractAt(ERC20_ABI,USDCAddr);
     const signers = await hre.ethers.getSigners();
