@@ -1,5 +1,5 @@
-const { DEGATE_ABI, ERC20_ABI, merkleProof } = require("./utils");
-// const merkleProof = require("./merkleProof.json");
+const { DEGATE_ABI, ERC20_ABI } = require("./utils");
+const merkleProof = require("./merkleProof.json");
 const { providers, Contract, Wallet, utils } = require("ethers");
 const dotenv = require("dotenv");
 dotenv.config();
