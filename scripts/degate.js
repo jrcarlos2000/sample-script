@@ -23,11 +23,6 @@ async function main() {
     "%s Balance before : ",
     await cToken.symbol(),
     (await cToken.balanceOf(accountToTest)).toString());
-  const transaction = await signer.sendTransaction(tx0);
-  console.log(transaction.hash);
-  const rt = await provider.waitForTransaction(transaction.hash)
-  console.log(rt);
-
   const tx = await cDegate.withdrawFromMerkleTree(merkleProof);
   console.log("Executing with receipt : ", tx.hash);
   const receipt = await tx.wait();
