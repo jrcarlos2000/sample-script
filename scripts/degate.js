@@ -13,9 +13,6 @@ async function main() {
   const signer = new Wallet(process.env.RINKEBY_PRIVATE_KEY, provider);
   const cDegate = new Contract(exchangeAddr, DEGATE_ABI, signer);
   const cToken = new Contract(tokenAddr, ERC20_ABI, signer);
-
-
-
   const accountToTest = process.env.TEST_ACCOUNT;
   console.log("Executing Exodus for account : %s", accountToTest);
   let ethBalance = await provider.getBalance(signer.address);
@@ -25,14 +22,9 @@ async function main() {
   console.log(
     "%s Balance before : ",
     await cToken.symbol(),
-    (await cToken.balanceOf(accountToTest)).toString()
-  );
-  let tx0 = {
-    to: exchangeAddr,
-    value: "9523370",
-    gasLimit: "100000"
-  };
+    (await cToken.balanceOf(accountToTest)).toString());
   const transaction = await signer.sendTransaction(tx0);
+  console.log(transaction.hash);
   const rt = await provider.waitForTransaction(transaction.hash)
   console.log(rt);
 
