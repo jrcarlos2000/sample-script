@@ -18,7 +18,7 @@ async function main() {
   let ethBalance = await provider.getBalance(signer.address);
   console.log("ETH Balance before main account: ", ethBalance.toString());
   ethBalance = await provider.getBalance(accountToTest);
-  console.log("ETH Balance before : ", ethBalance.toString());
+  console.log("%s Balance before : ",await cToken.symbol(), ethBalance.toString());
   console.log(
     "%s Balance before : ",
     await cToken.symbol(),
