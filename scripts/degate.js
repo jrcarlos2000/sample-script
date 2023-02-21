@@ -15,10 +15,8 @@ async function main() {
   const cToken = new Contract(tokenAddr, ERC20_ABI, signer);
   const accountToTest = process.env.TEST_ACCOUNT;
   console.log("Executing Exodus for account : %s", accountToTest);
-  let ethBalance = await provider.getBalance(signer.address);
-  console.log("ETH Balance before main account: ", ethBalance.toString());
   ethBalance = await provider.getBalance(accountToTest);
-  console.log("%s Balance before : ",await cToken.symbol(), ethBalance.toString());
+  console.log("ETH Balance before : ", ethBalance.toString());
   console.log(
     "%s Balance before : ",
     await cToken.symbol(),
