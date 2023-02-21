@@ -7,12 +7,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@nomiclabs/hardhat-waffle": "^2.0.3",
-    "@openzeppelin/contracts": "^4.7.3",
-    "dotenv": "^16.0.2"
-  },
-  "devDependencies": {
-    "@nomicfoundation/hardhat-toolbox": "^2.0.0",
-    "hardhat": "^2.11.2"
+    "dotenv": "^16.0.2",
+    "ethers": "^5.7.2"
   }
 }
